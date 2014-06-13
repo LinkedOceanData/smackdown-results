@@ -1,0 +1,113 @@
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>.
+@prefix dcterms: <http://www.purl.org/dc/terms/>.
+@prefix foaf: <http://xmlns.com/foaf/0.1/>.
+@prefix obs: <http://def.seegrid.csiro.au/isotc211/iso19156/2011/observation#>.
+@prefix prov: <http://www.w3.org/ns/prov#>.
+@prefix obs-prop: <http://environment.data.gov.au/def/op#>.
+@prefix dcat: <http://www.w3.org/ns/dcat#>.
+@prefix arpfo: <http://vocab.ox.ac.uk/projectfunding#>.
+#
+# Note - R2R (for example) may replace ODO with OceanLink (or GeoLink)
+#
+@prefix odo: <http://ocean-data.org/schema/>.
+@prefix time: <http://www.w3.org/2006/time#>.
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#>.
+
+<http://a_cruise> a odo:Cruise;
+   a prov:Activity;
+   odo:ofPlatform <http://a_vessel>;
+   #
+   # Note: We tried to use PROV here - but we can't use xsd:date there, only xsd:dateTime
+   #
+   odo:hasDeploymentDates <http://a_cruise#deploymentDates>;
+   prov:wasAssociatedWith <http://a_person>;
+   prov:qualifiedAssociation <http://a_cruise#000-111-222>;
+   #
+   # If a cruise is associated with a project
+   #
+   prov:qualifiedAssociation <http://a_cruise#111-222-333>;
+   #
+   # Start port
+   #
+   prov:qualifiedStart <http://a_cruise#departureInfo>.
+   #
+   # Datasets will point upwards to cruise (not the other way around!)
+   #
+   
+ <http://a_cruise#deploymentDates> a time:TemporalEntity.
+   #
+   # Need to add the full expansion of the TemporalEntity here
+   #
+   
+ #
+ # Qualified association(s) from a cruise to a person with a role
+ #
+ <http://a_cruise#000-111-222> a prov:Association;
+   	 prov:agent <http://a_person>;
+   	 prov:hadRole <http://a_role#chiefSceintist>.
+   	 
+ <http://a_cruise#111-222-333> a prov:Association;
+   	 prov:agent <http://a_project>;
+   	 prov:hadRole <http://a_role#wasFundedBy>.
+ #
+ # Departure information
+ #
+ <http://a_cruise#departureInfo> a prov:Start;
+   prov:atLocation <http://a_gazetteer_uri>.
+   
+   
+   
+ #
+ # Dataset
+ #
+ <http://a_dataset> a odo:DeploymentDataset;
+   a prov:Entity;
+   a dcat:Dataset;
+   prov:wasGeneratedBy <http://a_cruise>;
+   #
+   # If the cruise is unkown - create a PROV activity which is one day of observations from a given platform
+   #
+   odo:fromDeployment <http://a_cruise>;
+   #
+   # wasAttributed and fromInstrument are optional, 0-to-many and infers no rank information
+   # ODO needs to inherit the instrument *down* into the deployment dataset
+   #
+   prov:wasAttributedTo <http://vocab.nerc.ac.uk/collection/L{XX}/current/{AAAA}>;
+   odo:fromInstrument <http://vocab.nerc.ac.uk/collection/L{XX}/current/{AAAA}>;
+   #
+   # odo:hasParameter is both optional and repeatable
+   #
+   odo:hasParameter <http://vocab.nerc.ac.uk/collection/P02/current/{AAAA}>;
+   dcat:distribution <http://dataset_landing_page>;
+   prov:qualifiedAssociation <http://a_dataset#000-111-222>.
+   
+<http://a_dataset#000-111-222> a prov:Association;
+   	 prov:agent <http://a_project>;
+   	 prov:hadRole <http://a_role#wasFundedBy>.
+   
+ #
+ # Known instrument
+ #
+ <http://vocab.nerc.ac.uk/collection/L{XX}/current/{AAAA}> a prov:agent;
+   a odo:Instrument.
+ 
+ #
+ # Observation
+ #
+ <http://an_observation> a obs:Observation;
+   obs:observedProperty <http://vocab.nerc.ac.uk/collection/P01/current/{AAAAAAAA}>;
+   obs:result <http://a_result>;
+   obs-prop:procedure <http://vocab.nerc.ac.uk/collection/L{XX}/current/{AAAA}>.
+ <http://vocab.nerc.ac.uk/collection/P01/current/{AAAAAAAA}> a obs-prop:ScaledQuantityKind. 
+ <http://a_result> dcterms:isPartOf <http://a_dataset>.
+ 
+ 
+ #
+ # Project
+ #
+ <http://a_project> a foaf:Project;
+   a prov:Agent;
+   a prov:Activity;
+   a arpfo:Project;
+   odo:hasProjectDates <http://a_project#projectDates>.
+ <http://a_project#projectDates> a time:TemporalEntity.
