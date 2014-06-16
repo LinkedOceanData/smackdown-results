@@ -9,6 +9,10 @@ This document shows the results from the Semantics Smackdown held at Rensselaer 
 Contents
 --------
 
+1. [Worshop Participants](#workshop-participants) A list of organisations represented at the workshop
+2. [To-Do](#to-do) A list of remaining action items in the generation of this document
+3. [Files](#files) A description of the file set presented within the GitHub repository
+
 Workshop Participants
 ---------------------
 + Biological and Chemical Oceanography Data Management Office, Woods Hole Oceanographic Institution, USA
