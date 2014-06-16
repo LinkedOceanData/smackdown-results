@@ -9,10 +9,10 @@ This document shows the results from the Semantics Smackdown held at Rensselaer 
 Contents
 --------
 
-1. [Namespaces Used](#namespaces-used) A list of the RDF namespaces used within this document
-2. [Worshop Participants](#workshop-participants) A list of organisations represented at the workshop
-2. [To-Do](#to-do) A list of remaining action items in the generation of this document
-3. [Files](#files) A description of the file set presented within the GitHub repository
+1. [Namespaces Used][] A list of the RDF namespaces used within this document
+2. [Worshop Participants][] A list of organisations represented at the workshop
+2. [To-Do][] A list of remaining action items in the generation of this document
+3. [Files][] A description of the file set presented within the GitHub repository
 
 Namespaces Used
 ---------------
@@ -43,6 +43,14 @@ To-Do
 
 Files
 -----
-[data-model.ttl](https://github.com/LinkedOceanData/smackdown-results/blob/master/data_model.ttl) A Turtle file containing an abstract data model for Linked Ocean Data created during the meeting.
+[data-model.ttl][] A Turtle file containing an abstract data model for Linked Ocean Data created during the meeting.
 
-[/cruises](https://github.com/LinkedOceanData/smackdown-results/tree/master/cruise) A file folder for the Linked Data pattern describing a cruise.
+[/cruises][] A file folder for the Linked Data pattern describing a cruise.
+
+[//]: # (Reference link declarations)
+[/cruises]: https://github.com/LinkedOceanData/smackdown-results/tree/master/cruise
+[data-model.ttl]: https://github.com/LinkedOceanData/smackdown-results/blob/master/data_model.ttl
+[Files]: #files
+[Namespaces Used]: #namespaces-used
+[To-Do]: #to-do
+[Worshop Participants]: #workshop-participants
