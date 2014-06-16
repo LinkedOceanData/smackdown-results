@@ -5,4 +5,4 @@ Results from the Semantics Smackdown held at Rensselaer Polytechnic Institute, J
 
 Contents
 --------
-data-model.ttl A Turtle file containing an abstract data model for Linked Ocean Data created during the meeting.
+[data-model.ttl](https://github.com/LinkedOceanData/smackdown-results/blob/master/data_model.ttl) A Turtle file containing an abstract data model for Linked Ocean Data created during the meeting.
