@@ -4,7 +4,8 @@ Linked Ocean Data - Semantics Smackdown
 Introduction
 ------------
 
-This document shows the results from the Semantics Smackdown held at Rensselaer Polytechnic Institute, June 2014 as part of the Ocean Data Interoperability Platform project. During the final two days of this workshop, an approach to linking data using a generic pattern was discussed. This was driven by the use cases of interoperability 
+This document shows the results from the Semantics Smackdown held at Rensselaer Polytechnic Institute, June 2014 as part of the Ocean Data Interoperability Platform project. During the final two days of this workshop, an approach to linking data using a generic pattern was discussed. This was driven by the use cases of interoperability between data repositories in the ocean sciences domain and also between ocean sciences data repositories and those from other domains.
+Therefore, the approach taken to modelling Linked Ocean Data was to use high level terms from ontologies and vocabularies which are well understood in a range of communities (for example PROV and Observations and Measurements, [O&M][om]) while maintaining the references to domain specific ontologies (such as the Ocean Data Ontology, [ODO][odo]). 
 
 Contents
 --------
@@ -57,10 +58,13 @@ Files
 -----
 [data-model.ttl][] A Turtle file containing an abstract data model for Linked Ocean Data created during the meeting.
 
-[/cruises][] A file folder for the Linked Data pattern describing a cruise.
+[/cruise][] A file folder for the Linked Data pattern describing a cruise.
+
+[/project][] A file folder for the Linked Data pattern describing a project.
 
 [//]: # (Reference link declarations)
-[/cruises]: https://github.com/LinkedOceanData/smackdown-results/tree/master/cruise
+[/cruise]: https://github.com/LinkedOceanData/smackdown-results/tree/master/cruise
+[/project]: https://github.com/LinkedOceanData/smackdown-results/tree/master/project
 [data-model.ttl]: https://github.com/LinkedOceanData/smackdown-results/blob/master/data_model.ttl
 [Files]: #files
 [http://def.seegrid.csiro.au/isotc211/iso19156/2011/observation#]: http://def.seegrid.csiro.au/isotc211/iso19156/2011/observation#
@@ -73,6 +77,9 @@ Files
 [http://www.w3.org/ns/prov#]: http://www.w3.org/ns/prov#
 [http://xmlns.com/foaf/0.1/]: http://xmlns.com/foaf/0.1/
 [Namespaces Used]: #namespaces-used
+[odo]: http://www.ocean-data.org/
+[om]: http://www.opengeospatial.org/standards/om
+[prov]: http://www.w3.org/TR/2013/NOTE-prov-overview-20130430/
 [rdf]: http://www.w3.org/RDF/
 [To-Do]: #to-do
 [Worshop Participants]: #workshop-participants
