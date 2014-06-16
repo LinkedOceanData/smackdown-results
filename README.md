@@ -117,7 +117,7 @@ Ocean Data created during the meeting.
 
 [//]: # (Reference link declarations)
 [/cruise]: https://github.com/LinkedOceanData/smackdown-results/tree/master/cruise
-[/cruise]: https://github.com/LinkedOceanData/smackdown-results/tree/master/dataset
+[/dataset]: https://github.com/LinkedOceanData/smackdown-results/tree/master/dataset
 [/project]: https://github.com/LinkedOceanData/smackdown-results/tree/master/project
 [data-model.ttl]: https://github.com/LinkedOceanData/smackdown-results/blob/master/data_model.ttl
 [Files]: #files
