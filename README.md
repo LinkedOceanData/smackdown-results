@@ -13,7 +13,7 @@ repositories in the ocean sciences domain and also between ocean sciences data
 repositories and those from other domains. Therefore, the approach taken to 
 modelling Linked Ocean Data was to use high level terms from ontologies and 
 vocabularies which are well understood in a range of communities (for example 
-PROV and Observations and Measurements, [O&M][om]) while maintaining the 
+[PROV][prov] and Observations and Measurements, [O&M][om]) while maintaining the 
 references to domain specific ontologies (such as the Ocean Data Ontology, 
 [ODO][odo]). 
 
@@ -28,6 +28,22 @@ workshop
 document
 4. [Files][] A description of the file set presented within the GitHub 
 repository
+
+Namespaces Used
+---------------
++ arpfo [http://vocab.ox.ac.uk/projectfunding#][]
++ dcat [http://www.w3.org/ns/dcat#][]
++ dcterms [http://www.purl.org/dc/terms/][]
++ foaf [http://xmlns.com/foaf/0.1/][]
++ obs [http://def.seegrid.csiro.au/isotc211/iso19156/2011/observation#][]
++ obs-prop [http://environment.data.gov.au/def/op#][]
++ odo [http://ocean-data.org/schema/][]
++ prov [http://www.w3.org/ns/prov#][]
++ rdf [http://www.w3.org/1999/02/22-rdf-syntax-ns#][]
++ time [http://www.w3.org/2006/time#][]
+
+Cruise
+------
 
 Dataset
 -------
@@ -46,36 +62,20 @@ of these properties. Similarly, the use of odo:hasObservedProperty to state
 the discovery level descriptions of the observed properties within a dataset is
 both optional and repeatable.
 
-Observation
------------
-
-Cruise
-------
-
-Project
--------
-
-Temporal Entity
----------------
-
 Feature
 -------
 
 Geometry
 --------
 
-Namespaces Used
+Observation
+-----------
+
+Project
+-------
+
+Temporal Entity
 ---------------
-+ arpfo [http://vocab.ox.ac.uk/projectfunding#][]
-+ dcat [http://www.w3.org/ns/dcat#][]
-+ dcterms [http://www.purl.org/dc/terms/][]
-+ foaf [http://xmlns.com/foaf/0.1/][]
-+ obs [http://def.seegrid.csiro.au/isotc211/iso19156/2011/observation#][]
-+ obs-prop [http://environment.data.gov.au/def/op#][]
-+ odo [http://ocean-data.org/schema/][]
-+ prov [http://www.w3.org/ns/prov#][]
-+ rdf [http://www.w3.org/1999/02/22-rdf-syntax-ns#][]
-+ time [http://www.w3.org/2006/time#][]
 
 Workshop Participants
 ---------------------
@@ -113,11 +113,14 @@ Ocean Data created during the meeting.
 
 [/dataset][] A file folder for the Linked Data pattern describing a project.
 
+[/observation][] A file folder for the Linked Data pattern describing an observation.
+
 [/project][] A file folder for the Linked Data pattern describing a project.
 
 [//]: # (Reference link declarations)
 [/cruise]: https://github.com/LinkedOceanData/smackdown-results/tree/master/cruise
 [/dataset]: https://github.com/LinkedOceanData/smackdown-results/tree/master/dataset
+[/observation]: https://github.com/LinkedOceanData/smackdown-results/tree/master/observation
 [/project]: https://github.com/LinkedOceanData/smackdown-results/tree/master/project
 [data-model.ttl]: https://github.com/LinkedOceanData/smackdown-results/blob/master/data_model.ttl
 [Files]: #files
