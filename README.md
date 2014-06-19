@@ -20,13 +20,15 @@ references to domain specific ontologies (such as the Ocean Data Ontology,
 Contents
 --------
 
-1. [Namespaces Used][] A list of the [RDF][rdf] namespaces used within 
+1.[Namespaces Used][] A list of the [RDF][rdf] namespaces used within 
 this document
-2. [Worshop Participants][] A list of organisations represented at the 
+2. [Cruise] The Linked Data pattern decided upon to describe a research cruise
+3. [Dataset] The Linked Data pattern decided upon to describe a dataset
+4. [Workshop Participants][] A list of organisations represented at the 
 workshop
-3. [To-Do][] A list of remaining action items in the generation of this 
+5. [To-Do][] A list of remaining action items in the generation of this 
 document
-4. [Files][] A description of the file set presented within the GitHub 
+6. [Files][] A description of the file set presented within the GitHub 
 repository
 
 Namespaces Used
@@ -35,16 +37,26 @@ Namespaces Used
 + dcat [http://www.w3.org/ns/dcat#][]
 + dcterms [http://www.purl.org/dc/terms/][]
 + foaf [http://xmlns.com/foaf/0.1/][]
++ geo [http://www.opengis.net/ont/geosparql#][]
 + obs [http://def.seegrid.csiro.au/isotc211/iso19156/2011/observation#][]
 + obs-prop [http://environment.data.gov.au/def/op#][]
 + odo [http://ocean-data.org/schema/][]
++ ol-cruise [http://schema.oceanlink.org/cruise#][]
 + prov [http://www.w3.org/ns/prov#][]
 + rdf [http://www.w3.org/1999/02/22-rdf-syntax-ns#][]
++ sf [http://www.opengis.net/ont/sf#][]
 + time [http://www.w3.org/2006/time#][]
 
 Cruise
 ------
 ![](https://raw.githubusercontent.com/LinkedOceanData/smackdown-results/master/cruise/CruisePattern.png)
+
+A cruise is a discrete deployment of a platform (normally a research vessel)
+which has a trajectory from a port to another, or returning to the port of 
+departure. The cruise itself is not a geographic feature, its trajectory is,
+therefore an intermediate resource for the trajectory must be instantiated to
+which the geometry can be assigned. The linkage is made using classes and
+properties from the [OceanLink][] ontology.
 
 Dataset
 -------
@@ -63,9 +75,6 @@ relationship) and no rank or instrument order should be inferred from the use
 of these properties. Similarly, the use of odo:hasObservedProperty to state 
 the discovery level descriptions of the observed properties within a dataset is
 both optional and repeatable.
-
-Feature
--------
 
 Geometry
 --------
@@ -106,7 +115,6 @@ Florida State University, USA
 
 To-Do
 -----
-1. Add the geometry discussion results to the cruise example
 
 Files
 -----
@@ -126,11 +134,16 @@ Ocean Data created during the meeting.
 [/dataset]: https://github.com/LinkedOceanData/smackdown-results/tree/master/dataset
 [/observation]: https://github.com/LinkedOceanData/smackdown-results/tree/master/observation
 [/project]: https://github.com/LinkedOceanData/smackdown-results/tree/master/project
+[Cruise]: #cruise
 [data-model.ttl]: https://github.com/LinkedOceanData/smackdown-results/blob/master/data_model.ttl
+[Dataset]: #dataset
 [Files]: #files
 [http://def.seegrid.csiro.au/isotc211/iso19156/2011/observation#]: http://def.seegrid.csiro.au/isotc211/iso19156/2011/observation#
 [http://environment.data.gov.au/def/op#]: http://environment.data.gov.au/def/op#
 [http://ocean-data.org/schema/]: http://ocean-data.org/schema/
+[http://schema.oceanlink.org/cruise#]: http://schema.oceanlink.org/cruise
+[http://www.opengis.net/ont/geosparql#]: http://www.opengis.net/ont/geosparql#
+[http://www.opengis.net/ont/sf#]: http://www.opengis.net/ont/sf#
 [http://www.purl.org/dc/terms/]: http://www.purl.org/dc/terms/
 [http://vocab.ox.ac.uk/projectfunding#]: http://vocab.ox.ac.uk/projectfunding#
 [http://www.w3.org/1999/02/22-rdf-syntax-ns#]: http://www.w3.org/1999/02/22-rdf-syntax-ns#
@@ -140,9 +153,10 @@ Ocean Data created during the meeting.
 [http://xmlns.com/foaf/0.1/]: http://xmlns.com/foaf/0.1/
 [Namespaces Used]: #namespaces-used
 [odo]: http://www.ocean-data.org/
+[OceanLink]: http://schema.oceanlink.org/
 [om]: http://www.opengeospatial.org/standards/om
 [prov]: http://www.w3.org/TR/2013/NOTE-prov-overview-20130430/
 [rdf]: http://www.w3.org/RDF/
 [samos]: http://samos.coaps.fsu.edu/html/
 [To-Do]: #to-do
-[Worshop Participants]: #workshop-participants
+[Workshop Participants]: #workshop-participants

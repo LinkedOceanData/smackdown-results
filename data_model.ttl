@@ -4,8 +4,11 @@
 @prefix obs: <http://def.seegrid.csiro.au/isotc211/iso19156/2011/observation#>.
 @prefix prov: <http://www.w3.org/ns/prov#>.
 @prefix obs-prop: <http://environment.data.gov.au/def/op#>.
+@prefix ol-cruise: <http://schema.oceanlink.org/cruise#>.
 @prefix dcat: <http://www.w3.org/ns/dcat#>.
 @prefix arpfo: <http://vocab.ox.ac.uk/projectfunding#>.
+@prefix geo: <http://www.opengis.net/ont/geosparql#>.
+@prefix sf: <http://www.opengis.net/ont/sf#>.
 #
 # Note - R2R (for example) may replace ODO with OceanLink (or GeoLink)
 #
@@ -15,6 +18,7 @@
 
 <http://a_cruise> a odo:Cruise;
    a prov:Activity;
+   a ol-cruise:Cruise;
    odo:ofPlatform <http://a_vessel>;
    #
    # Note: We tried to use PROV here - but we can't use xsd:date there, only xsd:dateTime
@@ -29,7 +33,11 @@
    #
    # Start port
    #
-   prov:qualifiedStart <http://a_cruise#departureInfo>.
+   prov:qualifiedStart <http://a_cruise#departureInfo>;
+   #
+   # Cruise trajectory 
+   #
+   ol-cruise:hasTrajectory <http://a_cruise#trajectory>.
    #
    # Datasets will point upwards to cruise (not the other way around!)
    #
@@ -54,8 +62,14 @@
  #
  <http://a_cruise#departureInfo> a prov:Start;
    prov:atLocation <http://a_gazetteer_uri>.
-   
-   
+#
+# Trajectory - feature and then geometry
+#
+<http://a_cruise#trajectory> a ol-cruise:CruiseTrajectory;
+	a geo:Feature;
+	geo:hasGeometry <http://cruise_geometry>.
+<http://cruise_geometry> a sf:LineString;
+	geo:asWKT "<http://www.opengis.net/def/crs/OGC/1.3/CRS84> LINESTRING(-68.7030 37.934, -68.7160 37.92, -67.4650 36.019, -67.3680 35.865, -67.2700 35.715, -67.1720 35.558, -67.0770 35.408, -66.9780 35.257, -66.8880 35.108, -66.7850 34.952, -66.6950 34.802)"^^geo:wktliteral.	
    
  #
  # Dataset
