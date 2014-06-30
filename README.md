@@ -17,6 +17,8 @@ vocabularies which are well understood in a range of communities (for example
 references to domain specific ontologies (such as the Ocean Data Ontology, 
 [ODO][odo]). 
 
+![](https://raw.githubusercontent.com/LinkedOceanData/smackdown-results/master/overview.png)
+
 Contents
 --------
 
@@ -197,6 +199,12 @@ Files
 [data-model.ttl][] A Turtle file containing an abstract data model for Linked 
 Ocean Data created during the meeting.
 
+[overview.graphml][] A GraphML file showing the high level overview of the
+Linked Ocean Data data model
+
+[overview.png][] A PNG file showing the high level overview of the
+Linked Ocean Data data model
+
 [/cruise][] A file folder for the Linked Data pattern describing a cruise.
 
 [/dataset][] A file folder for the Linked Data pattern describing a project.
@@ -214,6 +222,7 @@ Ocean Data created during the meeting.
 [data-model.ttl]: https://github.com/LinkedOceanData/smackdown-results/blob/master/data_model.ttl
 [Dataset]: #dataset
 [Files]: #files
+[Geometry]: #geometry
 [http://def.seegrid.csiro.au/isotc211/iso19156/2011/observation#]: http://def.seegrid.csiro.au/isotc211/iso19156/2011/observation#
 [http://environment.data.gov.au/def/op#]: http://environment.data.gov.au/def/op#
 [http://ocean-data.org/schema/]: http://ocean-data.org/schema/
@@ -230,14 +239,19 @@ Ocean Data created during the meeting.
 [L22]: http://vocab.nerc.ac.uk/collection/L22/current/
 [lgd14]: http://www.w3.org/2014/03/lgd/
 [Namespaces Used]: #namespaces-used
+[Observation]: #observation
 [odo]: http://www.ocean-data.org/
 [OceanLink]: http://schema.oceanlink.org/
 [OGC]: http://www.opengeospatial.org/
 [om]: http://www.opengeospatial.org/standards/om
+[overview.graphml]: https://github.com/LinkedOceanData/smackdown-results/blob/master/overview.graphml
+[overview.png]: https://github.com/LinkedOceanData/smackdown-results/blob/master/overview.png
 [P01]: http://vocab.nerc.ac.uk/collection/P01/current/
+[Project]: #project
 [prov]: http://www.w3.org/TR/2013/NOTE-prov-overview-20130430/
 [rdf]: http://www.w3.org/RDF/
 [samos]: http://samos.coaps.fsu.edu/html/
+[Temporal Entity]: #temporal-entity
 [To-Do]: #to-do
 [W3C]: http://www.w3.org/
 [Workshop Participants]: #workshop-participants
