@@ -20,15 +20,22 @@ references to domain specific ontologies (such as the Ocean Data Ontology,
 Contents
 --------
 
-1.[Namespaces Used][] A list of the [RDF][rdf] namespaces used within 
+1. [Namespaces Used][] A list of the [RDF][rdf] namespaces used within 
 this document
-2. [Cruise] The Linked Data pattern decided upon to describe a research cruise
-3. [Dataset] The Linked Data pattern decided upon to describe a dataset
-4. [Workshop Participants][] A list of organisations represented at the 
+1. [Cruise] The Linked Data pattern decided upon to describe a research cruise
+1. [Dataset] The Linked Data pattern decided upon to describe a dataset
+1. [Geometry] Example encoding of a GeoSPARQL geometry for the Linked Ocean
+Data patterns
+1. [Observation] The Linked Data pattern decided upon to link an Observations 
+and Measurements observation to a dataset
+1. [Project] The Linked Data pattern decided upon to describe a project
+1. [Temporal Entity] Example encoding of an OWL Time temporal entity for the
+Linked Ocean Data patterns
+1. [Workshop Participants][] A list of organisations represented at the 
 workshop
-5. [To-Do][] A list of remaining action items in the generation of this 
+1. [To-Do][] A list of remaining action items in the generation of this 
 document
-6. [Files][] A description of the file set presented within the GitHub 
+1. [Files][] A description of the file set presented within the GitHub 
 repository
 
 Namespaces Used
@@ -89,6 +96,49 @@ Project
 
 Temporal Entity
 ---------------
+
+In order to encode temporal entities associated with cruise deployment dates 
+and with project dates, we chose to implement the Temporal Entity objects
+from OWL Time. An example encoding of a Temporal Entity is shown below.
+
+	<http://linked.bodc.ac.uk/series/952050#time> a time:TemporalEntity ;
+		time:hasBeginning <http://linked.bodc.ac.uk/series/952050#timeBegins> ;
+		time:hasEnd <http://linked.bodc.ac.uk/series/952050#timeEnds> .
+	
+	<http://linked.bodc.ac.uk/series/952050#timeBegins> a time:instance ;
+		time:inXSDDateTime "1994-10-31T03:00:00Z"^^xsd:datetime ;
+		time:inDateTime <http://linked.bodc.ac.uk/series/952050#timeBeginsDescription> .
+	
+	<http://linked.bodc.ac.uk/series/952050#timeBeginsDescription> a time:DateTimeDescription ;
+		time:unitType time:unitSecond ;
+		time:second "00" ;
+		time:dayOfWeek time:Tuesday ;
+		time:minute "00" ;
+		time:hour "03" ;
+		time:day "18" ;
+		time:month "10" ;
+		time:year "1994" ;
+		time:dayOfYear "291" ;
+		time:timeZone <http://www.w3.org/2006/timezone-world#ZTZ> .
+	
+	<http://linked.bodc.ac.uk/series/952050#timeEnds> a time:instance ;
+		time:inXSDDateTime "1994-10-31T11:02:00Z"^^xsd:datetime ;
+		time:inDateTime <http://linked.bodc.ac.uk/series/952050#timeEndsDescription> .
+	
+	<http://linked.bodc.ac.uk/series/952050#timeEndsDescription> a time:DateTimeDescription ;
+		time:unitType time:unitSecond ;
+		time:second "00" ;
+		time:dayOfWeek time:Monday ;
+		time:minute "02" ;
+		time:hour "11" ;
+		time:day "31" ;
+		time:month "10" ;
+		time:year "1994" ;
+		time:dayOfYear "304" ;
+		time:timeZone <http://www.w3.org/2006/timezone-world#ZTZ> .
+	
+	<http://linked.bodc.ac.uk/series/952050#timeBeginsDescription> a time:DateTimeDescription ;
+		time:timeZone <http://www.w3.org/2006/timezone-world#ZTZ> .
 
 Workshop Participants
 ---------------------
