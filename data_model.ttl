@@ -9,6 +9,7 @@
 @prefix arpfo: <http://vocab.ox.ac.uk/projectfunding#>.
 @prefix geo: <http://www.opengis.net/ont/geosparql#>.
 @prefix sf: <http://www.opengis.net/ont/sf#>.
+@prefix ef: <http://eidc.ceh.ac.uk/onto/ef#>.
 #
 # Note - R2R (for example) may replace ODO with OceanLink (or GeoLink)
 #
@@ -19,6 +20,7 @@
 <http://a_cruise> a odo:Cruise;
    a prov:Activity;
    a ol-cruise:Cruise;
+   a ef:EnvironmentalMonitoringActivity;
    odo:ofPlatform <http://a_vessel>;
    #
    # Note: We tried to use PROV here - but we can't use xsd:date there, only xsd:dateTime
@@ -41,7 +43,9 @@
    #
    # Datasets will point upwards to cruise (not the other way around!)
    #
-   
+ 
+ <http://a_vessel> a ef:EnvironmentalMonitoringFacility.
+
  <http://a_cruise#deploymentDates> a time:TemporalEntity.
    #
    # Need to add the full expansion of the TemporalEntity here
@@ -93,6 +97,7 @@
    #
    odo:hasParameter <http://vocab.nerc.ac.uk/collection/P02/current/{AAAA}>;
    dcat:distribution <http://dataset_landing_page>;
+   prov:atLocation <http://dataset_feature>;
    prov:qualifiedAssociation <http://a_dataset#000-111-222>.
    
 <http://a_dataset#000-111-222> a prov:Association;
@@ -111,10 +116,18 @@
  <http://an_observation> a obs:Observation;
    obs:observedProperty <http://vocab.nerc.ac.uk/collection/P01/current/{AAAAAAAA}>;
    obs:result <http://a_result>;
+   obs:featureOfInterest <http://dataset_feature>;
    obs-prop:procedure <http://vocab.nerc.ac.uk/collection/L{XX}/current/{AAAA}>.
  <http://vocab.nerc.ac.uk/collection/P01/current/{AAAAAAAA}> a obs-prop:ScaledQuantityKind. 
  <http://a_result> dcterms:isPartOf <http://a_dataset>.
  
+ #
+ # Feature of Interest
+ #
+ <http://dataset_feature> a geo:Feature;
+	geo:hasGeometry <http://dataset_geometry>.
+ <http://dataset_geometry> a sf:Point;
+	geo:asWKT "<http://www.opengis.net/def/crs/OGC/1.3/CRS84> POINT(-67.0770 35.408)"^^geo:wktliteral.
  
  #
  # Project
