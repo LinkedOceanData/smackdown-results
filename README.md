@@ -45,6 +45,7 @@ Namespaces Used
 + arpfo [http://vocab.ox.ac.uk/projectfunding#][]
 + dcat [http://www.w3.org/ns/dcat#][]
 + dcterms [http://www.purl.org/dc/terms/][]
++ ef [http://eidc.ceh.ac.uk/onto/ef#][]
 + foaf [http://xmlns.com/foaf/0.1/][]
 + geo [http://www.opengis.net/ont/geosparql#][]
 + obs [http://def.seegrid.csiro.au/isotc211/iso19156/2011/observation#][]
@@ -63,7 +64,12 @@ which has a trajectory from a port to another, or returning to the port of
 departure. The cruise itself is not a geographic feature, its trajectory is,
 therefore an intermediate resource for the trajectory must be instantiated to
 which the geometry can be assigned. The linkage is made using classes and
-properties from the [OceanLink][] ontology.
+properties from the [OceanLink][] ontology. For the European partners within
+the Ocean Data Interoperability Platform, a cruise has been declared as an
+Environmental Monitoring Activity, and a platform as an Environmental Monitoring
+Facility. This allows for compatibility with the Environmental Monitoring
+Facilities ([EF][EF]) theme of the European Commission's INSPIRE spatial data
+directive.
 
 ![](https://raw.githubusercontent.com/LinkedOceanData/smackdown-results/master/cruise/CruisePattern.png)
 
@@ -114,7 +120,8 @@ Observation
 Observations are built from the [O&M][om] data model, and we can easily model the 
 Observed Properties from the [BODC Parameter Usage Vocabulary][P01], procedure
 from the [SeaVoX Device Catalogue][L22] and result from the relevant data file, 
-which forms part of the dataset resource.
+which forms part of the dataset resource. [Datasets][Dataset] are linked to 
+[Observations][Observation] through both the Result and the Feature of Interest. 
 
 ![](https://raw.githubusercontent.com/LinkedOceanData/smackdown-results/master/observation/ObservationPattern.png)
 
@@ -221,11 +228,13 @@ Linked Ocean Data data model
 [Cruise]: #cruise
 [data-model.ttl]: https://github.com/LinkedOceanData/smackdown-results/blob/master/data_model.ttl
 [Dataset]: #dataset
+[EF]: http://eidc.ceh.ac.uk/onto/ef#
 [Files]: #files
 [Geometry]: #geometry
 [http://def.seegrid.csiro.au/isotc211/iso19156/2011/observation#]: http://def.seegrid.csiro.au/isotc211/iso19156/2011/observation#
 [http://environment.data.gov.au/def/op#]: http://environment.data.gov.au/def/op#
 [http://ocean-data.org/schema/]: http://ocean-data.org/schema/
+[http://eidc.ceh.ac.uk/onto/ef#]: http://eidc.ceh.ac.uk/onto/ef#
 [http://schema.oceanlink.org/cruise#]: http://schema.oceanlink.org/cruise
 [http://www.opengis.net/ont/geosparql#]: http://www.opengis.net/ont/geosparql#
 [http://www.opengis.net/ont/sf#]: http://www.opengis.net/ont/sf#
